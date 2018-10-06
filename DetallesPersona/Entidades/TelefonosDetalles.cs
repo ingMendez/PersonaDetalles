@@ -14,13 +14,20 @@ namespace DetallesPersona.Entidades
         public string TipoTelefono { get; set; }
         public string Telefono { get; set; }
 
-        public TelefonosDetalles(int id)
+        public TelefonosDetalles()
         {
             Id = 0;
             PersonaId = 0;
             TipoTelefono = string.Empty;
             Telefono = string.Empty;
         }
-
+        public TelefonosDetalles(int id,int idPersona,string tipoTelefono,string telefono)
+        {
+            Id = id;
+            PersonaId =idPersona;
+            TipoTelefono = tipoTelefono;
+            Telefono = telefono;
+            
+        }
     }
 }

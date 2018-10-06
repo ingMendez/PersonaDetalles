@@ -29,6 +29,15 @@ namespace DetallesPersona.Entidades
             Telefonos = new List<TelefonosDetalles>();
 
         }
+        public Personas(int Personaid,string nombre,string telefono,string cedula,string direccion, DateTime fecha)
+        {
+            PersonaId = Personaid;
+            Nombre = nombre;
+            Telefono = telefono;
+            Cedula = cedula;
+            Direccion = direccion;
+            FechaNacimiento = fecha;
+        }
     
 
     }

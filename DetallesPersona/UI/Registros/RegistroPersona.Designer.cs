@@ -48,15 +48,41 @@
             this.Telefono_textBox = new System.Windows.Forms.TextBox();
             this.Cedula_textBox = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.personasBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.personasBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.fechaNacimientoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.CargarButton = new System.Windows.Forms.Button();
+            this.Removerbutton = new System.Windows.Forms.Button();
+            this.Tipo_comboBox = new System.Windows.Forms.ComboBox();
             this.personasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Tipo_textBox = new System.Windows.Forms.TextBox();
             fechaNacimientoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGriView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personasBindingNavigator)).BeginInit();
+            this.personasBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personasBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // fechaNacimientoLabel
+            // 
+            fechaNacimientoLabel.AutoSize = true;
+            fechaNacimientoLabel.Location = new System.Drawing.Point(26, 171);
+            fechaNacimientoLabel.Name = "fechaNacimientoLabel";
+            fechaNacimientoLabel.Size = new System.Drawing.Size(96, 13);
+            fechaNacimientoLabel.TabIndex = 59;
+            fechaNacimientoLabel.Text = "Fecha Nacimiento:";
             // 
             // AgregarButton
             // 
@@ -197,6 +223,7 @@
             this.Telefono_textBox.Name = "Telefono_textBox";
             this.Telefono_textBox.Size = new System.Drawing.Size(112, 20);
             this.Telefono_textBox.TabIndex = 48;
+            this.Telefono_textBox.Text = "s";
             this.Telefono_textBox.TextChanged += new System.EventHandler(this.Telefono_textBox_TextChanged);
             // 
             // Cedula_textBox
@@ -210,14 +237,122 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // fechaNacimientoLabel
+            // personasBindingNavigator
             // 
-            fechaNacimientoLabel.AutoSize = true;
-            fechaNacimientoLabel.Location = new System.Drawing.Point(26, 171);
-            fechaNacimientoLabel.Name = "fechaNacimientoLabel";
-            fechaNacimientoLabel.Size = new System.Drawing.Size(96, 13);
-            fechaNacimientoLabel.TabIndex = 59;
-            fechaNacimientoLabel.Text = "Fecha Nacimiento:";
+            this.personasBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.personasBindingNavigator.BindingSource = this.personasBindingSource;
+            this.personasBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.personasBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.personasBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.personasBindingNavigatorSaveItem});
+            this.personasBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.personasBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.personasBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.personasBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.personasBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.personasBindingNavigator.Name = "personasBindingNavigator";
+            this.personasBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.personasBindingNavigator.Size = new System.Drawing.Size(552, 25);
+            this.personasBindingNavigator.TabIndex = 59;
+            this.personasBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // personasBindingNavigatorSaveItem
+            // 
+            this.personasBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.personasBindingNavigatorSaveItem.Enabled = false;
+            this.personasBindingNavigatorSaveItem.Name = "personasBindingNavigatorSaveItem";
+            this.personasBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.personasBindingNavigatorSaveItem.Text = "Save Data";
             // 
             // fechaNacimientoDateTimePicker
             // 
@@ -228,26 +363,49 @@
             this.fechaNacimientoDateTimePicker.Size = new System.Drawing.Size(90, 20);
             this.fechaNacimientoDateTimePicker.TabIndex = 60;
             // 
+            // CargarButton
+            // 
+            this.CargarButton.Location = new System.Drawing.Point(324, 197);
+            this.CargarButton.Name = "CargarButton";
+            this.CargarButton.Size = new System.Drawing.Size(45, 23);
+            this.CargarButton.TabIndex = 62;
+            this.CargarButton.Text = "+";
+            this.CargarButton.UseVisualStyleBackColor = true;
+            this.CargarButton.Click += new System.EventHandler(this.CargarButton_Click);
+            // 
+            // Removerbutton
+            // 
+            this.Removerbutton.Location = new System.Drawing.Point(263, 166);
+            this.Removerbutton.Name = "Removerbutton";
+            this.Removerbutton.Size = new System.Drawing.Size(45, 23);
+            this.Removerbutton.TabIndex = 63;
+            this.Removerbutton.Text = "+";
+            this.Removerbutton.UseVisualStyleBackColor = true;
+            this.Removerbutton.Click += new System.EventHandler(this.Removerbutton_Click_1);
+            // 
+            // Tipo_comboBox
+            // 
+            this.Tipo_comboBox.FormattingEnabled = true;
+            this.Tipo_comboBox.Location = new System.Drawing.Point(44, 200);
+            this.Tipo_comboBox.Name = "Tipo_comboBox";
+            this.Tipo_comboBox.Size = new System.Drawing.Size(111, 21);
+            this.Tipo_comboBox.TabIndex = 64;
+            // 
             // personasBindingSource
             // 
             this.personasBindingSource.DataSource = typeof(DetallesPersona.Entidades.Personas);
-            // 
-            // Tipo_textBox
-            // 
-            this.Tipo_textBox.Location = new System.Drawing.Point(42, 201);
-            this.Tipo_textBox.Multiline = true;
-            this.Tipo_textBox.Name = "Tipo_textBox";
-            this.Tipo_textBox.Size = new System.Drawing.Size(112, 20);
-            this.Tipo_textBox.TabIndex = 61;
             // 
             // RegistroPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 381);
-            this.Controls.Add(this.Tipo_textBox);
+            this.ClientSize = new System.Drawing.Size(552, 396);
+            this.Controls.Add(this.Tipo_comboBox);
+            this.Controls.Add(this.Removerbutton);
+            this.Controls.Add(this.CargarButton);
             this.Controls.Add(fechaNacimientoLabel);
             this.Controls.Add(this.fechaNacimientoDateTimePicker);
+            this.Controls.Add(this.personasBindingNavigator);
             this.Controls.Add(this.AgregarButton);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.DetalleDataGriView);
@@ -267,9 +425,13 @@
             this.Controls.Add(this.Cedula_textBox);
             this.Name = "RegistroPersona";
             this.Text = "RegistroPersona";
+            this.Load += new System.EventHandler(this.RegistroPersona_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGriView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personasBindingNavigator)).EndInit();
+            this.personasBindingNavigator.ResumeLayout(false);
+            this.personasBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -298,6 +460,21 @@
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.DateTimePicker fechaNacimientoDateTimePicker;
         private System.Windows.Forms.BindingSource personasBindingSource;
-        private System.Windows.Forms.TextBox Tipo_textBox;
+        private System.Windows.Forms.BindingNavigator personasBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton personasBindingNavigatorSaveItem;
+        private System.Windows.Forms.Button CargarButton;
+        private System.Windows.Forms.Button Removerbutton;
+        private System.Windows.Forms.ComboBox Tipo_comboBox;
     }
 }

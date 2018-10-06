@@ -35,5 +35,10 @@ namespace DetallesPersona
             RegistroPersona r =new  RegistroPersona();
             r.ShowDialog();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

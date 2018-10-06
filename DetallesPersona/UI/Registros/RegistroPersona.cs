@@ -176,8 +176,8 @@ namespace DetallesPersona.UI.Registros
 
         private void AgregarButton_Click(object sender, EventArgs e)
         {
-           // RegistroTelefono rt = new RegistroTelefono();
-           // rt.ShowDialog();
+            RegistroTelefono rt = new RegistroTelefono();
+              rt.ShowDialog();
             if (DetalleDataGriView.DataSource != null)
             {
                 this.Detalle = (List<TelefonosDetalles>)DetalleDataGriView.DataSource;
@@ -189,12 +189,13 @@ namespace DetallesPersona.UI.Registros
                         id:0,
                        idPersona:(int)IDnumericUpDown.Value,
                         telefono:Telefono_textBox.Text,
-                        tipoTelefono:Tipo_textBox.Text )
+                        tipoTelefono:Tipo_comboBox.Text
+                     )
                    );
                 CargarGrid();
                 Telefono_textBox.Focus();
                 Telefono_textBox.Clear();
-                Tipo_textBox.Clear();
+               // Tipo_textBox.Clear();
 
             }
 
@@ -220,6 +221,45 @@ namespace DetallesPersona.UI.Registros
 
         private void TlefonoComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void RegistroPersona_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CargarButton_Click(object sender, EventArgs e)
+        {
+            if (DetalleDataGriView.DataSource != null)
+            {
+                this.Detalle = (List<TelefonosDetalles>)DetalleDataGriView.DataSource;
+            }
+            // todo : validar campo del detalle
+
+            // agregar un nuevo Detalle con los datos incluidos
+            this.Detalle.Add(
+                new TelefonosDetalles(
+                    id : 0,
+                    idPersona : (int)IDnumericUpDown.Value,
+                    telefono: Telefono_textBox.Text,
+                    tipoTelefono : Tipo_comboBox.Text
+                ));
+            CargarGrid();
+            Telefono_textBox.Focus();
+          //  Telefono_textBox.Clear();
+           // Tipo_comboBox.Clear();
+            
+
+        }
+
+        private void Removerbutton_Click_1(object sender, EventArgs e)
+        {
+            if(DetalleDataGriView.Rows.Count > 0 && DetalleDataGriView.CurrentRow != null)
+            {
+                Detalle.RemoveAt(DetalleDataGriView.CurrentRow.Index);
+                CargarGrid();
+            }
 
         }
     }
