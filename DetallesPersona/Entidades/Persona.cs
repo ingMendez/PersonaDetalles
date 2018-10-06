@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DetallesPersona.Entidades
 {
-    public class Persona
+    public class Personas
     {
       [Key]
       public int PersonaId { get; set; }
@@ -14,9 +14,11 @@ namespace DetallesPersona.Entidades
         public string Telefono { get; set; }
         public string Cedula { get; set; }
         public string  Direccion { get; set; }
-        public DateTime FechaNacimiento { get; set; }
+        public DateTime FechaNacimiento { get; set;}
 
-        public Persona()
+        public virtual List<TelefonosDetalles> Telefonos { get; set; }
+
+        public Personas()
         {
             PersonaId = 0;
             Nombre = string.Empty;
@@ -24,9 +26,10 @@ namespace DetallesPersona.Entidades
             Cedula = string.Empty;
             Direccion = string.Empty;
             FechaNacimiento = DateTime.Now;
-
+            Telefonos = new List<TelefonosDetalles>();
 
         }
+    
 
     }
 }

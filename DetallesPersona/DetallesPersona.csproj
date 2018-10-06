@@ -47,6 +47,7 @@
     <Compile Include="BLL\PersonaBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Persona.cs" />
+    <Compile Include="Entidades\TelefonosDetalles.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,10 +80,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Registros\RegistroPersona.resx">
+      <DependentUpon>RegistroPersona.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RegistroTelefono.resx">
       <DependentUpon>RegistroTelefono.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="Properties\DataSources\DetallesPersona.Entidades.Personas.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

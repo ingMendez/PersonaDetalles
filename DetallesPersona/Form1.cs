@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DetallesPersona.UI.Registros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,25 @@ namespace DetallesPersona
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Nuevo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            RegistroTelefono r = new RegistroTelefono();
+
+            r.ShowDialog();
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            RegistroPersona r =new  RegistroPersona();
+            r.ShowDialog();
         }
     }
 }

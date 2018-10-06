@@ -2,6 +2,7 @@
 using DetallesPersona.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -10,9 +11,8 @@ namespace DetallesPersona.BLL
 {
     public class PersonaBLL
     {
-        public static object contexto { get; private set; }
-
-        public static bool Guardar(Persona personas)
+        
+        public static bool Guardar(Personas personas)
         {
             bool paso = false;
 
@@ -22,40 +22,51 @@ namespace DetallesPersona.BLL
             {
                 if (contexto.Personas.Add(personas) != null)
                 {
-                    contexto.SaveChanges();
-                    paso = true;
+                    paso = contexto.SaveChanges() >0;
+                    //paso = true;
                 }
-                contexto.Dispose();
+                
             }
             catch (Exception)
+            { throw; }
+            finally
             {
-                throw;
+                contexto.Dispose();
             }
             return paso;
 
 
         }
-        public static bool Modificar(Persona personas)
+        // Este es el metodo para modificar en la base de datos
+        public static bool Modificar(Personas persona)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
             try
             {
-                contexto.Entry(personas).State = System.Data.Entity.EntityState.Modified;
-                if (contexto.SaveChanges() > 0)
+                var Anterior = contexto.Personas.Find(persona.PersonaId);
+
+                //  contexto.Entry(persona).State = System.Data.Entity.EntityState.Modified;
+                foreach (var item in Anterior.Telefonos)
                 {
-                    paso = true;
+                    if (!persona.Telefonos.Exists(d => d.Id == item.Id))
+                    {
+                        contexto.Entry(item).State = EntityState.Deleted;
+                    }
                 }
-                contexto.Dispose();
+                contexto.Entry(persona).State = EntityState.Modified;
+                paso = (contexto.SaveChanges() > 0);
             }
             catch (Exception)
-            {
-                throw;
-            }
+            { throw; }
+            finally
+            { contexto.Dispose();}
+
             return paso;
 
         }
 
+        //este  es el metodo para eliminar en la bse de datos
         public static bool Eliminar(int id)
         {
             bool paso = false;
@@ -63,56 +74,77 @@ namespace DetallesPersona.BLL
             Contexto contexto = new Contexto();
             try
             {
-                Persona persona = contexto.Personas.Find(id);
-                contexto.Personas.Remove(persona);
 
-                if (contexto.SaveChanges() > 0)
-                {
-                    paso = true;
-                }
-                contexto.Dispose();
+                //Personas persona = contexto.Personas.Find(id);
+                //contexto.Personas.Remove(persona);
+
+                var eliminar = contexto.Personas.Find(id);
+                contexto.Entry(eliminar).State = System.Data.Entity.EntityState.Deleted;
+                // anteriormente
+                //if (contexto.SaveChanges() > 0)
+                //{
+                //    paso = true;
+                //}
+                // contexto.Dispose();
+                paso = (contexto.SaveChanges() > 0);
+                //contexto.Dispose();
 
             }
             catch (Exception)
             {
                 throw;
 
+            }
+            finally
+            {
+                contexto.Dispose();
             }
             return paso;
         }
 
-        public static Persona Buscar(int id)
+        /// <summary>
+        ///  Este es el metodo para buscar en la bae de datos
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static Personas Buscar(int id)
         {
             Contexto contexto = new Contexto();
-            Persona persona = new Persona();
+            Personas persona = new Personas();
             try
             {
                 persona = contexto.Personas.Find(id);
-                contexto.Dispose();
+                //  contexto.Dispose();
+                persona.Telefonos.Count();
 
             }
             catch (Exception)
-            {
-                throw;
-            }
+            { throw; }
+            finally {contexto.Dispose(); }
+
             return persona;
         }
 
 
-
-        public static List<Persona> GetList(Expression<Func<Persona, bool>> expression)
+        /// <summary>
+        /// Este es el metoo para listar o cosultar lo que tenemos en a base de datos
+        /// </summary>
+        /// <param name="expression"></param>
+        /// <returns></returns>
+        public static List<Personas> GetList(Expression<Func<Personas, bool>> expression)
         {
-            List<Persona> Persona = new List<Persona>();
+            List<Personas> Persona = new List<Personas>();
             Contexto contexto = new Contexto();
             try
             {
                 Persona = contexto.Personas.Where(expression).ToList();
-                contexto.Dispose();
+               // contexto.Dispose();
             }
             catch (Exception)
             {
                 throw;
             }
+            finally { contexto.Dispose(); }
             return Persona;
         }
 
