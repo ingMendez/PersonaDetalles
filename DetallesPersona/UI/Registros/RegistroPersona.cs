@@ -34,6 +34,12 @@ namespace DetallesPersona.UI.Registros
 
 
         }
+
+        internal void CargarButton_Click()
+        {
+            throw new NotImplementedException();
+        }
+
         private void LlenaCampo(Personas persona)
         {
             IDnumericUpDown.Value = persona.PersonaId;
@@ -200,7 +206,7 @@ namespace DetallesPersona.UI.Registros
             }
 
         }
-        private void CargarGrid()
+        public void CargarGrid()
         {
             DetalleDataGriView.DataSource = null;
             DetalleDataGriView.DataSource = this.Detalle;
@@ -229,7 +235,7 @@ namespace DetallesPersona.UI.Registros
 
         }
 
-        private void CargarButton_Click(object sender, EventArgs e)
+        private  void CargarButton_Click(object sender, EventArgs e)
         {
             if (DetalleDataGriView.DataSource != null)
             {
@@ -260,6 +266,11 @@ namespace DetallesPersona.UI.Registros
                 Detalle.RemoveAt(DetalleDataGriView.CurrentRow.Index);
                 CargarGrid();
             }
+
+        }
+
+        public void DetalleDataGriView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

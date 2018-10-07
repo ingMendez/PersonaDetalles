@@ -23,7 +23,7 @@ namespace DetallesPersona.BLL
                 if (contexto.Personas.Add(personas) != null)
                 {
                     paso = contexto.SaveChanges() >0;
-                    //paso = true;
+                 //   paso = true;
                 }
                 
             }
