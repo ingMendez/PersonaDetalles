@@ -106,7 +106,7 @@
             // 
             // EliminarButton
             // 
-            this.EliminarButton.Location = new System.Drawing.Point(245, 340);
+            this.EliminarButton.Location = new System.Drawing.Point(245, 369);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(75, 36);
             this.EliminarButton.TabIndex = 54;
@@ -116,7 +116,7 @@
             // 
             // GuardarButton
             // 
-            this.GuardarButton.Location = new System.Drawing.Point(136, 340);
+            this.GuardarButton.Location = new System.Drawing.Point(136, 369);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(76, 36);
             this.GuardarButton.TabIndex = 53;
@@ -126,7 +126,7 @@
             // 
             // NuevoButton
             // 
-            this.NuevoButton.Location = new System.Drawing.Point(19, 338);
+            this.NuevoButton.Location = new System.Drawing.Point(19, 367);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(83, 36);
             this.NuevoButton.TabIndex = 52;
@@ -244,11 +244,11 @@
             // 
             // Removerbutton
             // 
-            this.Removerbutton.Location = new System.Drawing.Point(246, 171);
+            this.Removerbutton.Location = new System.Drawing.Point(30, 338);
             this.Removerbutton.Name = "Removerbutton";
             this.Removerbutton.Size = new System.Drawing.Size(72, 23);
             this.Removerbutton.TabIndex = 63;
-            this.Removerbutton.Text = "+";
+            this.Removerbutton.Text = "Remover";
             this.Removerbutton.UseVisualStyleBackColor = true;
             this.Removerbutton.Click += new System.EventHandler(this.Removerbutton_Click_1);
             // 
@@ -268,7 +268,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 396);
+            this.ClientSize = new System.Drawing.Size(555, 432);
             this.Controls.Add(this.Tipo_comboBox);
             this.Controls.Add(this.Removerbutton);
             this.Controls.Add(this.CargarButton);

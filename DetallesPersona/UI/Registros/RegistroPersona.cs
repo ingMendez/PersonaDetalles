@@ -247,7 +247,7 @@ namespace DetallesPersona.UI.Registros
             this.Detalle.Add(
                 new TelefonosDetalles(
                     id : 0,
-                    idPersona : (int)IDnumericUpDown.Value,
+                   idPersona : (int)IDnumericUpDown.Value,
                     telefono: Telefono_textBox.Text,
                     tipoTelefono : Tipo_comboBox.Text
                 ));

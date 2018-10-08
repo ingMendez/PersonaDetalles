@@ -13,8 +13,6 @@ CREATE TABLE Personas
    Telefono varchar(13),
    Cedula varchar(13),
    Direccion varchar (max)
-
-
 );
 
 
